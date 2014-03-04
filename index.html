@@ -1,14 +1,14 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="This is the 'Event Showcase' landing page. In this site, the events in various cities are listed" />
 		<meta name="keywords" content="event activities fun" />
-		<title>Events! - Home</title>
+		<title>Events!</title>
 		<link href="./favicon.ico" rel="shortcut icon"></link>
 		<link type="text/css" rel="stylesheet" href="./style.css"></link>
 		<link type="text/css" rel="stylesheet" href="./responsiveslides.css"></link>
+		<link type="text/css" rel="stylesheet" href="./popup.css"></link>
 		<script src="./jquery-1.11.0.min.js"></script>
 		<script src="responsiveslides.min.js"></script>
 		<script src="eventshowcase.js"></script>
@@ -20,7 +20,7 @@
 <!-- Header -->
 				<header id="header">
 <!-- Logo -->
-					<a href="./index.html">
+					<a href="index.html">
 						<img src="./logo2.png" class="logo"></img>
 					</a>
 				</header>
@@ -48,21 +48,21 @@
 							</div>
 						</li>
 						<li>
-							<a href="myevents.html">Add New Event</a>
+							<a href="#popae" id="addevent">Add New Event</a>
 						</li>
 						<li>
-							<a href="mybookings.html">My Bookings</a>
+							<a href="#popmb" id="mybookings">My Bookings</a>
 						</li>
 						<li>
 							<a href="report.html">Report</a>
 						</li>
 						<li>
-							<a href="account.html">demo_user <span class="caret"></span>
+							<a href="#popac" id="account">demo_user <span class="caret"></span>
 							</a>
 							<div>
 								<ul>
 									<li>
-										<a href="index.html#login">Logout</a>
+										<a href="#popln" id="login">Logout</a>
 									</li>
 								</ul>
 							</div>
@@ -113,7 +113,7 @@ Your browser does not support the video tag.
 				<section id="bristol" class="city-events show">
 					<header>
 						<h2>Latest Events at <strong>Bristol</strong>!</h2>
-						<select class="sortcity" onchange="changecity(this);">
+						<select class="sortcity" onchange="changecity(this);" id="citysel">
 							<option value="bristol" selected="selected">Bristol</option>
 							<option value="london">London</option>
 							<option value="manchester">Manchester</option>
@@ -545,6 +545,116 @@ Your browser does not support the video tag.
 				</svg>
 			</div>
 
+<!-- user actions, initially planed to design as pop ups, but due to transition issues doing it as part of the page -->
+        <!-- popup form login -->
+        <a href="#" class="overlay" id="popln"></a>
+        <div class="popup">
+            <h2>Welcome Guest!</h2>
+            <p>Please enter your login and password here</p>
+            <div>
+                <label for="login">Login</label>
+                <input type="text" id="login" value="" />
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" value="" />
+            </div>
+            <input type="button" class="buttons" value="Log In" />
+
+            <a class="close" href="#popcl"></a>
+        </div>
+
+        <!-- popup form add new event - method get for initial client version-->
+        <form id="form1" enctype="multipart/form-data" method="get" action="Upload.aspx">
+        <a href="#x" class="overlay" id="popae"></a>
+        <div class="popup">
+            <h2 id="popaeh2">Add New Event</h2>
+            <p>Please enter the event details here:</p>
+            <div>
+                <label for="etitle">Title</label>
+                <input type="text" id="etitle" value="" />
+            </div>
+            <div>
+                <label for="eloc">Location</label>
+                <input type="text" id="eloc" value="" />
+            </div>
+            <div>
+                <label for="edesc">Description</label>
+                <input type="text" id="edesc" value="" />
+            </div>
+            <div>
+             <label for="fileToUpload">Select a File to Upload</label>
+      <input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();"/>
+      </div>
+            <div>
+                <label for="edate">Date</label>
+                <input type="date" format="dd/mm/yyyy" placeholder="dd/mm/yyyy" id="edate" value="" />
+            </div>
+            <div>
+                <label for="eprice">Price</label>
+                <input type="text" id="eprice" value="" />
+            </div>
+            <input type="button" value="Create" class="buttons" onclick="uploadFile();"/>
+
+            <a class="close" href="#popcl"></a>
+                    </form>
+
+        </div>
+        
+                <!-- view my bookings data -->
+        <a href="#" class="overlay" id="popmb"></a>
+        <div class="popup" id="mytable">
+<table>
+	<caption>Please find below your booking details.
+	</caption>
+	<colgroup />
+	<colgroup span="2" title="Your bookings!" />
+	<thead>
+		<tr>
+			<th scope="col">Event Name</th>
+			<th scope="col">Event Date</th>
+			<th scope="col">Booking Date</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td>River rafting</td>
+			<td>09/Mar/2014</td>
+			<td>04/Mar/2014</td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr>
+			<td>Musical night</td>
+			<td>12/Feb/2014</td>
+			<td>06/Feb/2014</td>
+		</tr>
+		<tr>
+			<td>Cycling</td>
+			<td>16/Feb/2014</td>
+			<td>04/Feb/2014</td>
+		</tr>
+	</tbody>
+</table>
+            <a class="close" href="#popcl"></a>
+        </div>
+
+         <!-- user account details -->
+        <a href="#" class="overlay" id="popac"></a>
+        <div class="popup" id="usracc">
+            <h2>Your account details!</h2>
+            <a href="#">
+		<img class="latest-events-img" src="./image1.png" alt="" />
+	</a>
+            <div><label>Name:<strong>Demo User</strong></label></div>
+            <div><label>Date Joined:<strong>02/Jan/2014</strong></label></div>
+            <div><label>email:<strong>demouser@bristol.ac.uk</strong></label></div>
+            <div><label>contact:<strong>+44 12345 54321</strong></label></div>
+            <div><label>Post code:<strong>BS5 9JA</strong></label></div>
+
+            <a class="close" href="#popcl"></a>
+        </div>
+
 <!-- Footer Wrapper -->
 			<div id="footer-wrapper">
 <!-- footer -->
@@ -555,19 +665,19 @@ Your browser does not support the video tag.
 					<nav>
 						<ul>
 							<li>
-								<a href="about.html">About</a>
+								<a onclick="construction();" id="about">About</a>
 							</li>
 							<li>
-								<a href="feedback.html">Feedback</a>
+								<a onclick="construction();">Feedback</a>
 							</li>
 							<li>
-								<a href="faq.html">FAQs</a>
+								<a onclick="construction();">FAQs</a>
 							</li>
 							<li>
-								<a href="terms.html">Terms &amp; Conditions</a>
+								<a onclick="construction();">Terms &amp; Conditions</a>
 							</li>
 							<li>
-								<a href="sitemap.html">sitemap</a>
+								<a onclick="construction();">sitemap</a>
 							</li>
 						</ul>
 					</nav>

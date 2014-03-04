@@ -34,6 +34,9 @@ function loadmore(){
 	var hash = window.location.hash;
 	if(hash === "" || hash === "#login"){
 	 hash="#bristol";
+	}else if(hash === "#close" || hash.substring(0,4) === "#pop"){
+		var val = $("#citysel").options[$("#citysel").selectedIndex].value;
+		hash="#" + "val";
 	}
 	
 	       var b = document.getElementById('event-button');
@@ -59,7 +62,8 @@ return false;
 function showevents(){
 	"use strict";
        var hash = window.location.hash;
-       if(hash != "" && hash != "#login"){
+       if(hash != "" && hash != "#login" 
+       	       && hash != "#close" && hash.substring(0,4) != "#pop"){
     $('.city-events').hide();
     $(hash).show();
     $('html').animate({scrollTop: $(hash).offset().top},'slow');
@@ -80,3 +84,20 @@ function changecity(sel){
 	window.location.href="#" + value;
 	return false;
 }
+
+
+/* file upload */
+function fileSelected() {
+        var file = document.getElementById('fileToUpload').files[0];
+      }
+
+      function uploadFile() {
+      	      $("#popfm").hide();
+      	            	      alert('Event created successfully! Pending POST implementation.');
+      	              	window.location.href="#popcl";
+      }
+      
+      /* construction */
+      function construction(){
+      	      alert('This page is under construction');
+      }

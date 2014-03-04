@@ -1,0 +1,91 @@
+.overlay {
+	cursor: default;
+	display:none;
+}
+.overlay:target {
+	display:inline-block;
+}
+
+.popup {
+	left: 50%; color:grey;
+	padding: 15pt;
+	text-align: justify;
+	margin-left: 30%;
+	z-index: 10;
+	border-radius: 10pt;
+	background-color: white;
+	display:none;
+}
+.overlay:target+.popup {
+	display:inline-block;
+}
+.close {
+	height: 30pt;
+	line-height: 30pt;
+	text-align: center;
+	text-decoration: none;
+	top: -15pt;
+	width: 30pt;
+	border-radius: 15pt;
+}
+.close:before {
+	color: grey;
+	content: "X";
+	text-shadow: 0 -1pt rgba(0, 0, 0, 0.9);
+	float: right;
+}
+
+.popup p, .popup div {
+	margin-bottom: 10pt;
+}
+.popup label {
+	display: inline-block;
+	text-align: left;
+	width: 180pt;
+}
+.popup input[type="text"], .popup input[type="date"], .popup input[type="password"] {
+	margin: 0;
+	padding: 4pt;
+	background:lightblue;
+	
+	border: 1pt solid grey;
+	border-radius: 3pt;
+}
+.popup input[type="text"]:hover, .popup input[type="date"]:hover, .popup input[type="password"]:hover {
+	background: white;
+}
+
+.popup h2{ font-weight:lighter;
+line-height:17.5pt}
+
+
+#mytable{
+	width:55%;
+}
+table { border-collapse: collapse;
+
+font-family: Futura, Arial, sans-serif; 
+width: 100%;
+}
+
+caption { font-size: larger; margin: 10pt auto; } 
+
+th, td { padding: 6.5pt; }
+
+th, thead { background: #000; color: #fff; border: 1px solid #000; }
+
+td { border: 1pt solid #777; }
+
+#usracc{
+	width:40%;
+}
+
+#usracc label{
+	width: 100%;
+}
+
+#usracc strong{
+
+float:right;
+}
+
