@@ -249,6 +249,13 @@ nav > ul > li:last-child{
 
 .latest-events-img{
 	width: 100%;
+	cursor:pointer;
+}
+
+
+.useracc-img{
+	width: 30%;
+	cursor:pointer;
 }
 
 .latest-events div{
@@ -269,14 +276,14 @@ nav > ul > li:last-child{
 }
 
 .buttons:hover{
-background-color:black;
-color:white;
+	background-color:black;
+	color:white;
 }
 
 .learn-more{
 	float: left;
-margin-top: -15%;
-margin-left: 20%;
+	margin-top: -15%;
+	margin-left: 20%;
 }
 
 /* show and hide */
@@ -290,12 +297,12 @@ margin-left: 20%;
 
 /* sort */
 .sortdate {
-margin-left: 63%;
-margin-bottom: auto;
-color: grey;
-border-radius: 5%;
-line-height: 150%;
-margin-top: -3%;
+	margin-left: 63%;
+	margin-bottom: auto;
+	color: grey;
+	border-radius: 5%;
+	line-height: 150%;
+	margin-top: -3%;
 }
 
 .sortdate input{
@@ -303,21 +310,32 @@ margin-top: -3%;
 }
 
 .sortcity{
-margin: -3% 0% 0% 52%;
-color: grey;
-position: absolute;
-width: 10%;
-border-radius: 10%;
-border: none;
-height: 17.5pt;
+	margin: -3% 0% 0% 52%;
+	color: grey;
+	position: absolute;
+	width: 10%;
+	border-radius: 10%;
+	border: none;
+	height: 17.5pt;
 }
 
 .sortdate-btn{
 	float: right;
-margin-right: 10%;
-margin-top: -2%;
-background-color: lightblue;
-border: none;
-border-radius: 10%;
-line-height: 165%;
+	margin-right: 10%;
+	margin-top: -2%;
+	background-color: lightblue;
+	border: none;
+	border-radius: 10%;
+	line-height: 165%;
+	cursor:pointer;
 }
+
+#myreport{
+	margin: 5%;	
+}
+
+#edesc{
+	width: 70%;
+height: 50pt;
+}
+

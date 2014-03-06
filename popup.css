@@ -7,14 +7,16 @@
 }
 
 .popup {
-	left: 50%; color:grey;
+	color:grey;
 	padding: 15pt;
 	text-align: justify;
-	margin-left: 30%;
+	margin-left: 10%;
 	z-index: 10;
 	border-radius: 10pt;
 	background-color: white;
 	display:none;
+	width: 75%;
+margin-right: 10%;
 }
 .overlay:target+.popup {
 	display:inline-block;
@@ -62,19 +64,27 @@ line-height:17.5pt}
 #mytable{
 	width:55%;
 }
-table { border-collapse: collapse;
-
-font-family: Futura, Arial, sans-serif; 
-width: 100%;
+table { 
+	border-collapse: collapse;
+	font-family: Futura, Arial, sans-serif; 
+	width: 100%;
 }
 
-caption { font-size: larger; margin: 10pt auto; } 
+caption { 
+	font-size: larger; margin: 10pt auto; 
+} 
 
-th, td { padding: 6.5pt; }
+th, td { 
+	padding: 6.5pt; 
+}
 
-th, thead { background: #000; color: #fff; border: 1px solid #000; }
+th, thead { 
+	background: black; color: white; border: 1pt solid black; 
+}
 
-td { border: 1pt solid #777; }
+td { 
+	border: 1pt solid #777; 
+}
 
 #usracc{
 	width:40%;
@@ -85,7 +95,75 @@ td { border: 1pt solid #777; }
 }
 
 #usracc strong{
-
-float:right;
+	float:right;
 }
 
+#fileToUpload{
+	cursor: pointer;
+	padding: 1% 0% 1% 1%;
+	border: none;
+	background-color: lightblue;
+	border-radius: 10%;
+	color: grey;
+	width: 36%;
+}
+
+
+/* help links */
+.help {
+	background-color: lightblue;
+	border-radius: 10pt;
+	display: none;
+	padding: 5pt;
+	z-index: 100;
+}
+
+.help-link:hover + span {
+	display: inline;
+}
+
+/* show event data as modal window */
+#modal {
+	background:white;
+	left:50%;
+	margin:-250pt 0 0 -40%;
+	position:absolute;
+	top:-50%;
+	width:80%;
+	border-radius:5pt;
+	box-shadow:0 3pt 7pt rgba(0,0,0,.25);
+	-moz-box-shadow:0 3pt 7pt rgba(0,0,0,.25);
+	-webkit-box-shadow:0 3pt 7pt rgba(0,0,0,.25);
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+/* Make the modal appear when targeted */
+#modal:target {
+	top:60%;
+	transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+	z-index: 100;
+}
+#modal header{
+	background:grey;
+	border-bottom: 1pt solid grey;
+	border-radius: 5pt 5pt 0 0;
+	-moz-border-radius: 5pt 5pt 0 0;
+	-webkit-border-radius: 5pt 5pt 0 0;
+}
+#modal section, #modal header{
+	padding:15pt;
+	z-index:200;
+}
+#modal h2 {
+	margin:0;
+	color: white;
+}
+
+.comment input{
+	width: 75%;
+	height: 50pt;
+	padding-left: 5pt;
+}
