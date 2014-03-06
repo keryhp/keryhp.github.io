@@ -341,4 +341,6 @@ height: 50pt;
 .vid-poster{
 	background:transparent no-repeat url('./poster.png');
 	background-size:100%;
+	position:absolute;
+    z-index:0;
 }
