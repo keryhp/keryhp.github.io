@@ -56,7 +56,7 @@ function showevents(){
 		$('html').animate({scrollTop: $(hash).offset().top},'slow');
 	}
 		
-	console.log("SVG Animation begins..");
+	/*console.log("SVG Animation begins..");*/
 	/* svg image animation */
 	/*
 	<svg class="svg-holder" id="svg2" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
@@ -99,7 +99,7 @@ loadmore();
 function changecity(sel){
 	"use strict";
 	var value = sel.options[sel.selectedIndex].value; 
-	console.log("City selection changed to" + value);
+	/*console.log("City selection changed to" + value);*/
 	window.location.href="#" + value;
 	return false;
 }
@@ -121,43 +121,43 @@ function uploadFile() {
 /* construction */
 function construction(){
 	"use strict";
-	console.log("Page under construction.");
+	/*console.log("Page under construction.");*/
 	alert('This page is under construction');
 }
 
 function learnmore(){
 	"use strict";
-	console.log("Learn more.");
+	/*console.log("Learn more.");*/
 	window.location.href="#modal";
 }
 
 function closemodal(){
 	"use strict";
-	console.log("Modal closed.");
+	/*console.log("Modal closed.");*/
 	window.location.href="#";
 }
 
 function loadimage(){
 	"use strict";
-	console.log("load image.");
+	/*console.log("load image.");*/
 	alert("Functionality to slide the carousel image is pending.");
 }
 
 function bookevent(){
 	"use strict";
-	console.log("Event booking.");
+	/*console.log("Event booking.");*/
 	alert("Functionality to book an event is pending.");
 }
 
 function postcomment(){
 	"use strict";
-	console.log("Post event comment.");
+	/*console.log("Post event comment.");*/
 	alert("Functionality to post comment is pending.");
 }
 
 function login(){
 	"use strict";
-	console.log("login try..");
+	/*console.log("login try..");*/
 	var val = validateForm();
 	if(val === true){
 		window.location.href="#";
@@ -167,7 +167,7 @@ function login(){
 function validateForm()
 {
 	"use strict";
-	console.log("validating form..");
+	/*console.log("validating form..");*/
 	var x=document.forms["form-1ogin"]["email"].value;
 	var y=document.forms["form-1ogin"]["password"].value;
 	var atpos=x.indexOf("@");
