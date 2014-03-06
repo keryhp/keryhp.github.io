@@ -339,5 +339,6 @@ nav > ul > li:last-child{
 height: 50pt;
 }
 .vid-poster{
-	background:transparent no-repeat url('./poster.png');background-size:100%;
+	background:transparent no-repeat url('./poster.png');
+	background-size:100%;
 }
