@@ -26,12 +26,14 @@ function loadmore(){
 	}
 	
 	var b = document.getElementById('event-button');
-	if(b.textContent === 'Load more!'){
-		b.textContent = 'Load less!';
-		console.log("Loading more events..");
+	if(b.textContent === 'Load more!' || b.innerText === 'Load more!'){
+		b.textContent = 'Load less!'; 
+		b.innerText = 'Load less!';
+		/*console.log("Loading more events..");*/
 	}else{
 		b.textContent = 'Load more!';
-		console.log("UnLoading additional events..");
+		b.innerText = 'Load more!';
+		/*console.log("UnLoading additional events..");*/
 	}
 	
 	var id = hash + "-more-events";
@@ -59,12 +61,6 @@ function showevents(){
 	/*console.log("SVG Animation begins..");*/
 	/* svg image animation */
 	/*
-	<svg class="svg-holder" id="svg2" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
-	<image x="0" y="0" width="100" height="65" xlink:href="./car2.png">
-	<animate attributeName="x" from="1100" to="10" dur="15s" fill="remove" repeatCount="indefinite"></animate>
-	</image>
-	</svg>
-	*/
 	if(document.getElementById("svg2"))
 	{
 		var imgtag = "./car2.png";
@@ -85,7 +81,7 @@ function showevents(){
 		img.appendChild(animate);
 		
 		document.getElementById("svg2").appendChild(img);
-	}
+	}*/
 };
 
 $(window).on('hashchange', function() {
